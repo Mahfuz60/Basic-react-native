@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 import React, { useState } from 'react';
 
 export default function From() {
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState([]);
 
   const handleBlur = (e) => {
     const field = e.target.name;
@@ -10,16 +10,16 @@ export default function From() {
 
     const newValue = { ...value };
     newValue[field] = value;
-
     setValue(newValue);
 
-    console.log(newValue);
+    // console.log(newValue);
   };
 
   const handleButton = (e) => {
     alert('from submitted');
-    // e.target.value = '';
     setValue('');
+
+    // e.target.value = '';
 
     e.preventDefault();
   };

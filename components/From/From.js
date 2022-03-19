@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 import React, { useState } from 'react';
 
 export default function From() {
-  const [value, setValue] = useState([]);
+  const [values, setValues] = useState({});
 
   const handleBlur = (e) => {
     const field = e.target.name;
@@ -10,14 +10,14 @@ export default function From() {
 
     const newValue = { ...value };
     newValue[field] = value;
-    setValue(newValue);
+    setValues(newValue);
 
     // console.log(newValue);
   };
 
   const handleButton = (e) => {
     alert('from submitted');
-    setValue('');
+    setValues('');
 
     // e.target.value = '';
 
@@ -32,6 +32,7 @@ export default function From() {
         <TextInput style={styles.inputView} placeholder='enter your email' name='email' type='email' onBlur={handleBlur} />
         <Button color='#841584' title='Submit Form' type='submit' onPress={handleButton} />
       </View>
+      <View>{users}</View>
     </View>
   );
 }

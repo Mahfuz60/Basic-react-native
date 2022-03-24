@@ -1,30 +1,11 @@
-import { View, StyleSheet, ScrollView } from 'react-native';
-import { NativeRouter, Route, Link } from 'react-router-native';
-import About from './components/About/About';
-import From from './components/From/From';
-import Home from './components/Home/Home';
-import List from './components/List/List';
-
+import Store from './store';
+import { Provider } from 'react-redux';
+import MainComponent from './MainComponent';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <ScrollView>
-        <Home />
-        <About />
-      </ScrollView> */}
-      {/* <From/> */}
-      <List />
-      
-    </View>
+    <Provider store={Store}>
+      <MainComponent />
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-});

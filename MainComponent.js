@@ -1,9 +1,9 @@
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { NativeRouter, Route, Link } from 'react-router-native';
-import About from './components/About/About';
-import From from './components/From/From';
-import Home from './components/Home/Home';
-import List from './components/List/List';
+import About from './src/components/About/About';
+import From from './src/components/From/From';
+import Home from './src/components/Home/Home';
+import List from './src/components/List/List';
 
 export default function MainComponent() {
   return (
